@@ -14,7 +14,7 @@ A modern, high-performance landing page for [QuickLook for Windows](https://gith
 
 ```bash
 # 1. Navigate to project directory
-cd quicklook
+cd quicklook-website
 
 # 2. Install dependencies
 npm install
@@ -34,7 +34,7 @@ npm run dev
 
 ```json
 {
-  "name": "quicklook",
+  "name": "quicklook-website",
   "private": true,
   "version": "1.0.0",
   "type": "module",
@@ -79,7 +79,7 @@ npm run dev
 
 ```
 
-QuickLook/
+QuickLook-Website/
 │
 │
 ├── 📂 node_modules/                   # Dependencies (auto-generated)
