@@ -22,7 +22,7 @@ export const features = [
     {
         icon: Eye,
         title: 'Instant Preview',
-        description: 'Press spacebar to preview any file instantly, just like macOS Quick Look. No waiting, no launching heavy applications.',
+        description: 'Press spacebar to preview any file instantly, just like macOS. No waiting, no launching heavy applications.',
         gradient: 'from-blue-500 to-cyan-500',
     },
     {
