@@ -1,0 +1,26 @@
+data:
+  - "src/data/**"
+
+ui:
+  - "src/components/**"
+
+hooks:
+  - "src/hooks/**"
+
+services:
+  - "src/services/**"
+
+assets:
+  - "src/assets/**"
+  - "public/**"
+
+docs:
+  - "**/*.md"
+
+config:
+  - "vite.config.*"
+  - "package.json"
+  - "package-lock.json"
+
+github:
+  - ".github/**"
