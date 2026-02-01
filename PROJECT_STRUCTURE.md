@@ -40,8 +40,8 @@ QuickLook/
 ├── 📄 README.md                       # Project documentation
 ├── 📄 PROJECT_STRUCTURE.md            # Architecture guide
 ├── 📄 QUICKSTART.md                   # Quick start guide
-├── 📄 CSS_GUIDE.md                    # CSS Guide guide
-└── 
+└── 📄 CSS_GUIDE.md                    # CSS Guide guide
+ 
 ```
 
 ## 🎯 Component Responsibilities
@@ -273,4 +273,4 @@ Components (consume data)
 ---
 
 **Last Updated**: January 2026  
-**Maintainer**: QuickLook Community
+**Maintainer**: Adnan Bhaldar & QuickLook Community
