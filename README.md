@@ -116,8 +116,8 @@ QuickLook-Website/
 ├── 📄 README.md                       # Project documentation
 ├── 📄 PROJECT_STRUCTURE.md            # Architecture guide
 ├── 📄 QUICKSTART.md                   # Quick start guide
-├── 📄 CSS_GUIDE.md                    # CSS Guide guide
-└── 
+└── 📄 CSS_GUIDE.md                    # CSS Guide guide
+ 
 
 ```
 
