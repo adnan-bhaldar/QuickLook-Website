@@ -1,39 +1,6 @@
 import { motion } from 'framer-motion';
-import { Download, Play, CheckCircle, Settings, AlertCircle } from 'lucide-react';
-
-const steps = [
-    {
-        icon: Download,
-        title: 'Download the Installer',
-        description: 'Get the latest .msi installer from the download button above or from the GitHub releases page.',
-        color: 'from-blue-500 to-cyan-500',
-    },
-    {
-        icon: Play,
-        title: 'Run the Installer',
-        description: 'Double-click the downloaded .msi file and follow the installation wizard. Administrator privileges may be required.',
-        color: 'from-purple-500 to-pink-500',
-    },
-    {
-        icon: Settings,
-        title: 'Configure (Still in development)',
-        description: 'Right-click the QuickLook icon in the system tray to customize keyboard shortcuts, appearance, and supported file types.',
-        color: 'from-orange-500 to-red-500',
-    },
-    {
-        icon: CheckCircle,
-        title: 'Start Previewing',
-        description: 'Select any file in File Explorer and press the spacebar. QuickLook will instantly show a preview window.',
-        color: 'from-green-500 to-emerald-500',
-    },
-];
-
-const requirements = [
-    'Windows 10 version 1903 or later',
-    'Windows 11 (all versions)',
-    '.NET Framework 4.8 or later',
-    '~50 MB of disk space',
-];
+import {  AlertCircle, CheckCircle } from 'lucide-react';
+import { steps, requirements } from '../data';
 
 /**
  * Installation guide section
