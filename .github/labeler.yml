@@ -1,26 +1,36 @@
 data:
-  - "src/data/**"
+  - changed-files:
+      - any-glob-to-any-file: "src/data/**"
 
 ui:
-  - "src/components/**"
+  - changed-files:
+      - any-glob-to-any-file: "src/components/**"
 
 hooks:
-  - "src/hooks/**"
+  - changed-files:
+      - any-glob-to-any-file: "src/hooks/**"
 
 services:
-  - "src/services/**"
+  - changed-files:
+      - any-glob-to-any-file: "src/services/**"
 
 assets:
-  - "src/assets/**"
-  - "public/**"
+  - changed-files:
+      - any-glob-to-any-file:
+          - "src/assets/**"
+          - "public/**"
 
 docs:
-  - "**/*.md"
+  - changed-files:
+      - any-glob-to-any-file: "**/*.md"
 
 config:
-  - "vite.config.*"
-  - "package.json"
-  - "package-lock.json"
+  - changed-files:
+      - any-glob-to-any-file:
+          - "vite.config.*"
+          - "package.json"
+          - "package-lock.json"
 
 github:
-  - ".github/**"
+  - changed-files:
+      - any-glob-to-any-file: ".github/**"
