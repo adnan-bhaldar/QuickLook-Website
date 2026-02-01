@@ -1,23 +1,7 @@
 import { motion } from 'framer-motion';
 import { Github, Heart, ExternalLink } from 'lucide-react';
+import { footerLinks } from '../data';
 
-const footerLinks = {
-    Product: [
-        { name: 'Features', href: '#features' },
-        { name: 'Installation', href: '#install' },
-        { name: 'Plugins', href: 'https://github.com/QL-Win/QuickLook/wiki/Available-Plugins', external: true },
-    ],
-    Resources: [
-        { name: 'Documentation', href: 'https://github.com/QL-Win/QuickLook/wiki', external: true },
-        { name: 'GitHub', href: 'https://github.com/QL-Win/QuickLook', external: true },
-        { name: 'Report Issue', href: 'https://github.com/QL-Win/QuickLook/issues', external: true },
-    ],
-    Community: [
-        { name: 'Discussions', href: 'https://github.com/QL-Win/QuickLook/discussions', external: true },
-        { name: 'Contribute', href: 'https://github.com/QL-Win/QuickLook/blob/master', external: true },
-        { name: 'License', href: 'https://opensource.org/license/GPL-3.0', external: true },
-    ],
-};
 
 /**
  * Footer component with links and credits

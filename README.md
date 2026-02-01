@@ -98,6 +98,9 @@ QuickLook-Website/
 │   ├── 📂 context/
 │   │   └── 📄 VersionContext.jsx      # React Context for version data
 │   │
+│   ├── 📂 data/
+│   │   └── 📄 index.js                # NEW - All static content
+│   │
 │   ├── 📂 hooks/
 │   │   └── 📄 useGitHubRelease.js     # Custom hook for GitHub API
 │   │

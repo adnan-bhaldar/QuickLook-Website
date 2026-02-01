@@ -4,7 +4,7 @@
 
 ```bash
 # Navigate to the project directory
-cd quicklook
+cd QuickLook-Website
 
 # Install dependencies
 npm install
@@ -82,11 +82,12 @@ npm run build
 ```
 src/
 ├── components/        → UI components (Hero, Features, etc.)
-├── hooks/            → useGitHubRelease custom hook
-├── context/          → VersionContext for state
-├── services/         → GitHub API integration
-├── App.jsx           → Main orchestrator
-└── main.jsx          → Entry point
+├── hooks/             → useGitHubRelease custom hook
+├── context/           → VersionContext for state
+├── data/              → All static content
+├── services/          → GitHub API integration
+├── App.jsx            → Main orchestrator
+└── main.jsx           → Entry point
 ```
 
 ## 🎨 Design System

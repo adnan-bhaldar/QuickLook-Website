@@ -29,7 +29,7 @@ If you're unsure where to start, check existing issues or open a discussion.
 The website is built using:
 
 - **React 19**
-- **Vite 6**
+- **Vite 7**
 - **Tailwind CSS v4.1 (Vite plugin approach)**
 - **Framer Motion** (animations)
 - **Lucide React** (icons)
@@ -97,6 +97,31 @@ git checkout -b feature/hero-animation-improvements
 - Use **functional React components** only
 - Prefer **composition over duplication**
 
+--- 
+
+### 📦 Static Data Management
+
+All static content (text, lists, links, labels, UI copy, etc.) is centralized in:
+
+`src/data/index.js`
+
+**Guidelines**
+
+- ❌ Do not hardcode static values inside components
+- ✅ Import data from src/data/index.js
+- 🧩 Group related data logically (features, navigation, hero content, stats, etc.)
+- 🧹 Keep the file clean, readable, and well-organized
+- ✏️ Update this file when adding or modifying static content
+
+**Example**
+
+```
+import { features } from "@/data";
+```
+***This approach keeps components lean and makes content easier to maintain.***
+
+---
+
 ### 🎨 Styling (Tailwind v4.1)
 
 - Use utility classes first
@@ -153,7 +178,7 @@ style: improve button hover states
 3. Clearly describe:
    - What you changed
    - Why you changed it
-   - Screenshots or recordings (if UI-related)
+   - Screenshots or recordings (if UI-changes)
 4. Wait for review and address feedback if needed
 
 ---
