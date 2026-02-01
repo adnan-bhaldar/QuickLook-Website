@@ -1,6 +1,6 @@
 # QuickLook Landing Page 🚀
 
-A modern, high-performance landing page for [QuickLook for Windows](https://github.com/QL-Win/QuickLook) built with **React 19**, **Vite 6**, and **Tailwind CSS v4.1**.
+A modern, high-performance landing page for [QuickLook for Windows](https://github.com/QL-Win/QuickLook) built with **React 19**, **Vite 7**, and **Tailwind CSS v4.1**.
 
 ---
 
@@ -23,7 +23,7 @@ npm install
 npm run dev
 
 # 4. Open browser
-# Visit: http://localhost:3000
+# Visit: http://localhost:5173
 ```
 
 **That's it!** The page will automatically fetch the latest QuickLook version from GitHub.
@@ -71,7 +71,7 @@ npm run dev
 - **Framer Motion** - Smooth animations
 - **Lucide React** - Beautiful icon library
 - **@tailwindcss/vite** - Tailwind v4.1 Vite plugin (replaces PostCSS)
-- **Vite 6** - Next-generation build tool
+- **Vite 7** - Next-generation build tool
 
 ---
 
@@ -258,7 +258,7 @@ npm run deploy
 - [Tailwind v4 Vite Plugin](https://tailwindcss.com/docs/installation/vite)
 - [React 19 Docs](https://react.dev)
 - [Framer Motion](https://www.framer.com/motion/)
-- [Vite 6 Guide](https://vitejs.dev/guide/)
+- [Vite 7 Guide](https://vitejs.dev/guide/)
 
 ---
 
@@ -297,7 +297,7 @@ This is a template/demo. To contribute to QuickLook:
 **Built with ❤️ using:**
 - React 19
 - Tailwind CSS v4.1
-- Vite 6
+- Vite 7
 - Framer Motion
 - Lucide React
 
