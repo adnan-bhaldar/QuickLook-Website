@@ -48,7 +48,7 @@ Click the **Fork** button on GitHub to create your own copy of the repository.
 
 ```bash
 git clone https://github.com/adnan-bhaldar/QuickLook-Website.git
-cd QuickLook
+cd QuickLook-Website
 ```
 
 ### 3️⃣ Install Dependencies
