@@ -100,7 +100,7 @@ export default function Footer() {
                         </div>
 
                         <div className="flex items-center gap-6 text-dark-400 text-sm">
-                            <span>&copy; {new Date().getFullYear()} QuickLook</span>
+                            <span>&copy; 2017&ndash;{new Date().getFullYear()} QuickLook</span>
                             <a
                                 href="https://opensource.org/license/GPL-3.0"
                                 target="_blank"
