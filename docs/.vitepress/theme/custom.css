@@ -1,0 +1,604 @@
+/* ============================================================
+   QuickLook – VitePress Custom Theme
+   Cobalt blue palette matched to the QuickLook logo
+   Tailwind CSS v4 – imported via @import
+   ============================================================ */
+
+@import "tailwindcss";
+
+/* ── Google Fonts are loaded via head[] in config.ts ───────── */
+
+/* ── CSS Variables ─────────────────────────────────────────── */
+:root {
+  /* Brand */
+  --vp-c-brand-1: #2563eb;
+  --vp-c-brand-2: #3b82f6;
+  --vp-c-brand-3: #60a5fa;
+  --vp-c-brand-soft: rgba(37, 99, 235, 0.12);
+
+  /* Fonts */
+  --vp-font-family-base: 'Sora', sans-serif;
+  --vp-font-family-mono: 'JetBrains Mono', monospace;
+
+  /* Background */
+  --vp-c-bg: #f0f5ff;
+  --vp-c-bg-soft: #e8effd;
+  --vp-c-bg-mute: #dce8fb;
+  --vp-c-bg-alt: #f5f8ff;
+
+  /* Text */
+  --vp-c-text-1: #0f172a;
+  --vp-c-text-2: #334155;
+  --vp-c-text-3: #64748b;
+
+  /* Borders */
+  --vp-c-divider: rgba(37, 99, 235, 0.13);
+  --vp-c-border: rgba(37, 99, 235, 0.16);
+  --vp-c-gutter: #e2ecff;
+
+  /* Nav */
+  --vp-nav-bg-color: rgba(240, 245, 255, 0.82);
+
+  /* Sidebar */
+  --vp-sidebar-bg-color: rgba(240, 245, 255, 0.88);
+
+  /* Buttons */
+  --vp-button-brand-bg: #2563eb;
+  --vp-button-brand-hover-bg: #1d4ed8;
+  --vp-button-brand-active-bg: #1e40af;
+  --vp-button-brand-border: transparent;
+  --vp-button-brand-text: #ffffff;
+
+  /* Home hero */
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: linear-gradient(135deg, #1d4ed8, #3b82f6, #60a5fa);
+  --vp-home-hero-image-background-image: radial-gradient(ellipse 55% 50% at 50% 50%, rgba(37, 99, 235, 0.22) 0%, transparent 80%);
+  --vp-home-hero-image-filter: blur(44px);
+
+  /* Code */
+  --vp-code-block-bg: #1e293b;
+  --vp-code-bg: rgba(37, 99, 235, 0.08);
+  --vp-code-color: #2563eb;
+
+  /* Local glass vars */
+  --ql-glass-bg: rgba(255, 255, 255, 0.70);
+  --ql-glass-border: rgba(255, 255, 255, 0.58);
+  --ql-glass-shadow: 0 8px 32px rgba(30, 64, 175, 0.10);
+}
+
+.dark {
+  --vp-c-bg: #0d1117;
+  --vp-c-bg-soft: #161b22;
+  --vp-c-bg-mute: #1c2333;
+  --vp-c-bg-alt: #111827;
+
+  --vp-c-text-1: #e2e8f0;
+  --vp-c-text-2: #94a3b8;
+  --vp-c-text-3: #64748b;
+
+  --vp-c-divider: rgba(59, 130, 246, 0.15);
+  --vp-c-border: rgba(59, 130, 246, 0.18);
+  --vp-c-gutter: #0d1117;
+
+  --vp-nav-bg-color: rgba(13, 17, 23, 0.88);
+  --vp-sidebar-bg-color: rgba(13, 17, 23, 0.92);
+
+  --vp-code-bg: rgba(59, 130, 246, 0.10);
+  --vp-code-color: #60a5fa;
+
+  --ql-glass-bg: rgba(15, 23, 42, 0.64);
+  --ql-glass-border: rgba(255, 255, 255, 0.07);
+  --ql-glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.42);
+}
+
+/* ── Base ───────────────────────────────────────────────────── */
+body {
+  font-family: 'Sora', sans-serif !important;
+  background: var(--vp-c-bg);
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+/* Subtle noise texture */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* ── Nav glass ──────────────────────────────────────────────── */
+.VPNav {
+  backdrop-filter: blur(20px) saturate(160%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(160%) !important;
+  background: var(--vp-nav-bg-color) !important;
+  border-bottom: 1px solid var(--vp-c-border) !important;
+  transition: background 0.35s ease !important;
+}
+
+/* ── Sidebar glass ──────────────────────────────────────────── */
+.VPSidebar {
+  backdrop-filter: blur(16px) saturate(140%) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(140%) !important;
+  background: var(--vp-sidebar-bg-color) !important;
+  border-right: 1px solid var(--vp-c-border) !important;
+}
+
+/* Sidebar section headers */
+.VPSidebarItem.level-0>.item>.text {
+  font-weight: 700 !important;
+  font-size: 0.78rem !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase !important;
+  color: var(--vp-c-text-3) !important;
+}
+
+/* Sidebar active link */
+.VPSidebarItem.is-active>.item>.link>.text {
+  color: var(--vp-c-brand-1) !important;
+  font-weight: 600 !important;
+}
+
+.VPSidebarItem .item .link {
+  transition: color 0.2s ease !important;
+}
+
+.VPSidebarItem .item .link:hover .text {
+  color: var(--vp-c-brand-2) !important;
+}
+
+/* ── Local navigation (On this page) ───────────────────────── */
+.VPDocAsideOutline .title {
+  font-weight: 700 !important;
+  font-size: 0.78rem !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase !important;
+  color: var(--vp-c-text-3) !important;
+}
+
+/* ── Content typography ─────────────────────────────────────── */
+.vp-doc {
+  font-family: 'Sora', sans-serif !important;
+}
+
+.vp-doc h1,
+.vp-doc h2,
+.vp-doc h3,
+.vp-doc h4 {
+  font-family: 'Sora', sans-serif !important;
+  font-weight: 700 !important;
+}
+
+.vp-doc h1 {
+  font-size: 2rem !important;
+  font-weight: 800 !important;
+}
+
+.vp-doc h2 {
+  border-top: 1px solid var(--vp-c-divider) !important;
+  padding-top: 1.5rem !important;
+  font-size: 1.45rem !important;
+}
+
+.vp-doc p {
+  line-height: 1.75 !important;
+  color: var(--vp-c-text-2);
+}
+
+/* ── Code ───────────────────────────────────────────────────── */
+:not(pre)>code {
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 0.875em;
+  background: var(--vp-code-bg) !important;
+  color: var(--vp-code-color) !important;
+  border-radius: 0.4em;
+  padding: 0.12em 0.42em;
+  border: 1px solid rgba(37, 99, 235, 0.15);
+}
+
+.dark :not(pre)>code {
+  border-color: rgba(59, 130, 246, 0.18);
+}
+
+pre,
+pre code {
+  font-family: 'JetBrains Mono', monospace !important;
+}
+
+/* ── Kbd ────────────────────────────────────────────────────── */
+kbd {
+  font-family: 'JetBrains Mono', monospace !important;
+  background: rgba(37, 99, 235, 0.08);
+  color: #2563eb;
+  border: 1px solid rgba(37, 99, 235, 0.22);
+  border-radius: 0.35rem;
+  padding: 0.1rem 0.45rem;
+  font-size: 0.82em;
+  box-shadow: 0 2px 0 rgba(37, 99, 235, 0.18);
+}
+
+.dark kbd {
+  background: rgba(59, 130, 246, 0.10);
+  color: #60a5fa;
+  border-color: rgba(59, 130, 246, 0.25);
+  box-shadow: 0 2px 0 rgba(59, 130, 246, 0.18);
+}
+
+/* ── Table ──────────────────────────────────────────────────── */
+.vp-doc table {
+  width: 100%;
+  border-radius: 0.875rem;
+  overflow: hidden;
+  border: 1px solid var(--vp-c-border);
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.vp-doc th {
+  background: var(--ql-glass-bg) !important;
+  backdrop-filter: blur(8px);
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--vp-c-text-3);
+}
+
+.vp-doc td,
+.vp-doc th {
+  border-color: var(--vp-c-border) !important;
+}
+
+.vp-doc tr:hover td {
+  background: var(--vp-c-brand-soft);
+  transition: background 0.15s;
+}
+
+/* ── Buttons ────────────────────────────────────────────────── */
+.VPButton.brand {
+  background: linear-gradient(135deg, #1d4ed8, #3b82f6) !important;
+  border-color: transparent !important;
+  font-family: 'Sora', sans-serif !important;
+  font-weight: 600 !important;
+  border-radius: 0.75rem !important;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s !important;
+}
+
+.VPButton.brand::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.22), transparent);
+  transition: left 0.5s ease;
+}
+
+.VPButton.brand:hover::before {
+  left: 140%;
+}
+
+.VPButton.brand:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 10px 28px rgba(37, 99, 235, 0.35) !important;
+}
+
+.VPButton.alt {
+  border-color: var(--vp-c-brand-1) !important;
+  color: var(--vp-c-brand-1) !important;
+  font-family: 'Sora', sans-serif !important;
+  font-weight: 600 !important;
+  border-radius: 0.75rem !important;
+  transition: transform 0.2s, background 0.2s, box-shadow 0.2s !important;
+}
+
+.VPButton.alt:hover {
+  background: var(--vp-c-brand-soft) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* ── Home hero ──────────────────────────────────────────────── */
+.VPHero {
+  padding-bottom: 2rem !important;
+}
+
+.VPHero .name,
+.VPHero .text,
+.VPHero .tagline {
+  font-family: 'Sora', sans-serif !important;
+}
+
+.VPHero .name {
+  font-weight: 800 !important;
+}
+
+.VPHero .tagline {
+  font-size: 1.1rem !important;
+  line-height: 1.7 !important;
+}
+
+/* Home features */
+.VPFeatures .VPFeature {
+  background: var(--ql-glass-bg) !important;
+  backdrop-filter: blur(16px) saturate(160%) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(160%) !important;
+  border: 1px solid var(--ql-glass-border) !important;
+  box-shadow: var(--ql-glass-shadow) !important;
+  border-radius: 1.125rem !important;
+  transition: transform 0.3s cubic-bezier(.22, .68, 0, 1.2), box-shadow 0.3s ease !important;
+}
+
+.VPFeatures .VPFeature:hover {
+  transform: translateY(-5px) scale(1.013) !important;
+  box-shadow: 0 18px 44px rgba(37, 99, 235, 0.18) !important;
+}
+
+.dark .VPFeatures .VPFeature:hover {
+  box-shadow: 0 18px 44px rgba(59, 130, 246, 0.20) !important;
+}
+
+.VPFeature .title {
+  font-family: 'Sora', sans-serif !important;
+  font-weight: 700 !important;
+}
+
+/* ── Scrollbar ──────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3b82f6;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2563eb;
+}
+
+/* ── Custom callout blocks ──────────────────────────────────── */
+.custom-block {
+  border-radius: 0.875rem !important;
+}
+
+.custom-block.tip {
+  border-color: var(--vp-c-brand-2) !important;
+  background: rgba(37, 99, 235, 0.06) !important;
+}
+
+.custom-block.tip .custom-block-title {
+  color: var(--vp-c-brand-1) !important;
+}
+
+/* ── Glass card utility (used in Vue components) ────────────── */
+.ql-glass {
+  background: var(--ql-glass-bg);
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  border: 1px solid var(--ql-glass-border);
+  box-shadow: var(--ql-glass-shadow);
+}
+
+.ql-card {
+  background: var(--ql-glass-bg);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  border: 1px solid var(--ql-glass-border);
+  box-shadow: var(--ql-glass-shadow), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  border-radius: 1.125rem;
+  transition: transform 0.3s cubic-bezier(.22, .68, 0, 1.2), box-shadow 0.3s ease;
+}
+
+.ql-card:hover {
+  transform: translateY(-5px) scale(1.012);
+  box-shadow: 0 18px 44px rgba(37, 99, 235, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.dark .ql-card:hover {
+  box-shadow: 0 18px 44px rgba(59, 130, 246, 0.20);
+}
+
+/* ── Gradient text ──────────────────────────────────────────── */
+.ql-gradient-text {
+  background: linear-gradient(135deg, #1d4ed8, #3b82f6, #60a5fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.dark .ql-gradient-text {
+  background: linear-gradient(135deg, #60a5fa, #93c5fd, #bfdbfe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Badge ──────────────────────────────────────────────────── */
+.ql-badge {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--vp-c-brand-1);
+  background: var(--vp-c-brand-soft);
+  border: 1px solid rgba(37, 99, 235, 0.20);
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  margin-bottom: 0.75rem;
+}
+
+/* ── Reveal animation ───────────────────────────────────────── */
+.ql-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.ql-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Page gradient accent line at top ──────────────────────── */
+.VPNav .container::after {
+  display: none;
+}
+
+.VPLocalNav {
+  border-bottom: 1px solid var(--vp-c-border) !important;
+  background: var(--vp-nav-bg-color) !important;
+  backdrop-filter: blur(12px) !important;
+}
+
+/* ── Content area link styles ───────────────────────────────── */
+.vp-doc a {
+  color: var(--vp-c-brand-1);
+  font-weight: 500;
+  text-decoration-color: rgba(37, 99, 235, 0.30);
+  transition: color 0.2s, text-decoration-color 0.2s;
+}
+
+.vp-doc a:hover {
+  color: var(--vp-c-brand-2);
+  text-decoration-color: rgba(59, 130, 246, 0.6);
+}
+
+/* ── Hero mesh background ───────────────────────────────────── */
+.VPHome {
+  background:
+    radial-gradient(ellipse 70% 55% at 70% 20%, rgba(59, 130, 246, 0.14) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 40% at 10% 80%, rgba(29, 78, 216, 0.10) 0%, transparent 60%),
+    var(--vp-c-bg) !important;
+}
+
+.dark .VPHome {
+  background:
+    radial-gradient(ellipse 70% 55% at 70% 20%, rgba(59, 130, 246, 0.18) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 40% at 10% 80%, rgba(96, 165, 250, 0.08) 0%, transparent 60%),
+    var(--vp-c-bg) !important;
+}
+
+/* ── Dividers in custom components ─────────────────────────── */
+.ql-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.3), transparent);
+  border: none;
+  margin: 2rem 0;
+}
+
+/* ── Desktop nav dropdown (VPFlyout) ───────────────────────── */
+
+/* Caret rotation when open */
+.VPFlyout .button .vpi-chevron-down {
+  transition: transform 0.25s ease !important;
+}
+
+.VPFlyout.open .button .vpi-chevron-down {
+  transform: rotate(180deg) !important;
+}
+
+/* Dropdown panel slide-in */
+.VPFlyout.open .menu {
+  animation: dropdownIn 0.2s cubic-bezier(0.22, 0.68, 0, 1.2) forwards;
+}
+
+@keyframes dropdownIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Desktop dropdown item hover */
+.VPMenu .VPMenuLink a {
+  transition: color 0.2s ease, padding-left 0.2s ease, background 0.2s ease !important;
+  border-radius: 0.5rem;
+}
+
+.VPMenu .VPMenuLink a:hover {
+  color: var(--vp-c-brand-1) !important;
+  padding-left: 1.1rem !important;
+  background: var(--vp-c-brand-soft) !important;
+}
+
+/* ── Mobile nav screen (VPNavScreen) ───────────────────────── */
+
+/* Plus icon rotates 45deg → becomes × when expanded */
+.VPNavScreenMenuGroup .button .vpi-plus {
+  transition: transform 0.25s ease !important;
+}
+
+.VPNavScreenMenuGroup .button[aria-expanded="true"] .vpi-plus {
+  transform: rotate(45deg) !important;
+}
+
+/* Group button hover */
+.VPNavScreenMenuGroup .button {
+  transition: color 0.2s ease !important;
+}
+
+.VPNavScreenMenuGroup .button:hover {
+  color: var(--vp-c-brand-1) !important;
+}
+
+/* Items slide-in when expanded */
+.VPNavScreenMenuGroup .button[aria-expanded="true"]~.items {
+  animation: screenMenuIn 0.25s cubic-bezier(0.22, 0.68, 0, 1.2) forwards;
+}
+
+@keyframes screenMenuIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Group link items hover */
+.VPNavScreen .VPNavScreenMenuGroupLink {
+  display: block;
+  transition: color 0.2s ease, padding-left 0.2s ease, background 0.2s ease !important;
+  border-radius: 0.5rem;
+  padding-left: 0.75rem;
+}
+
+.VPNavScreen .VPNavScreenMenuGroupLink:hover {
+  color: var(--vp-c-brand-1) !important;
+  padding-left: 1.25rem !important;
+  background: var(--vp-c-brand-soft) !important;
+}
+
+/* Top-level screen links (Home, Features, Installation) */
+.VPNavScreen .VPNavScreenMenuLink {
+  transition: color 0.2s ease !important;
+}
+
+.VPNavScreen .VPNavScreenMenuLink:hover {
+  color: var(--vp-c-brand-1) !important;
+}
+
+/* ── Fix mobile nav screen height ───────────────────────────── */
+#VPNavScreen {
+  height: 100dvh !important;
+  min-height: 100dvh !important;
+}
