@@ -1,33 +1,20 @@
 <template>
   <div class="stats-wrap">
-    <div
-      class="ql-card stat ql-reveal"
-      v-for="(s, i) in statItems"
-      :key="i"
-      :style="{ transitionDelay: i * 0.08 + 's' }"
-      :ref="
-        (el) => {
-          if (el) cardRefs[i] = el as HTMLElement;
-        }
-      "
-    >
+    <div class="ql-card stat ql-reveal" v-for="(s, i) in statItems" :key="i"
+      :style="{ transitionDelay: i * 0.08 + 's' }" :ref="(el) => {
+        if (el) cardRefs[i] = el as HTMLElement;
+      }
+        ">
       <div class="val ql-gradient-text">
         <ClientOnly>
-          <CountUp
-            v-if="s.numeric && s.raw > 0"
-            :endVal="s.raw"
-            :duration="2.2"
-            :options="{
-              separator: ',',
-              suffix: s.suffix,
-              decimalPlaces: s.decimals,
-            }"
-            :ref="
-              (el) => {
-                if (el) countRefs[i] = el;
-              }
-            "
-          />
+          <CountUp v-if="s.numeric && s.raw > 0" :endVal="s.raw" :duration="2.2" :options="{
+            separator: ',',
+            suffix: s.suffix,
+            decimalPlaces: s.decimals,
+          }" :ref="(el) => {
+            if (el) countRefs[i] = el;
+          }
+            " />
           <template #fallback>{{ s.v }}</template>
         </ClientOnly>
         <span v-if="!s.numeric">{{ s.v }}</span>
@@ -38,9 +25,12 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted } from "vue";
-import { ICountUp as CountUp } from 'vue-countup-v3'
+import { ref, computed, onMounted, defineAsyncComponent } from "vue";
 import { useRepoStats } from "../composables/useRepoStats";
+
+const CountUp = defineAsyncComponent(() =>
+  import('vue-countup-v3').then(m => m.ICountUp ?? m.default ?? m)
+)
 
 const { stats: repoStats, fetchRepoStats } = useRepoStats();
 
@@ -111,20 +101,24 @@ onMounted(async () => {
   gap: 0.875rem;
   margin: 1.5rem 0;
 }
+
 @media (min-width: 540px) {
   .stats-wrap {
     grid-template-columns: repeat(4, 1fr);
   }
 }
+
 .stat {
   padding: 1.25rem;
   text-align: center;
 }
+
 .val {
   font-size: 1.65rem;
   font-weight: 800;
   margin-bottom: 0.25rem;
 }
+
 .lbl {
   font-size: 0.7rem;
   font-weight: 600;

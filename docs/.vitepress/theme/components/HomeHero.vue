@@ -2,34 +2,21 @@
   <div class="ql-home-hero">
     <!-- Stats -->
     <div class="stats-row">
-      <div
-        class="ql-card stat-card ql-reveal"
-        v-for="(s, i) in stats"
-        :key="i"
-        :style="{ transitionDelay: i * 0.08 + 's' }"
-        :ref="
-          (el) => {
+      <div class="ql-card stat-card ql-reveal" v-for="(s, i) in stats" :key="i"
+        :style="{ transitionDelay: i * 0.08 + 's' }" :ref="(el) => {
             if (el) statCardRefs[i] = el as HTMLElement;
           }
-        "
-      >
+          ">
         <div class="stat-value ql-gradient-text">
           <ClientOnly>
-            <CountUp
-              v-if="s.numeric && s.raw > 0"
-              :endVal="s.raw"
-              :duration="2.2"
-              :options="{
-                separator: ',',
-                suffix: s.suffix,
-                decimalPlaces: s.decimals,
-              }"
-              :ref="
-                (el) => {
+            <CountUp v-if="s.numeric && s.raw > 0" :endVal="s.raw" :duration="2.2" :options="{
+              separator: ',',
+              suffix: s.suffix,
+              decimalPlaces: s.decimals,
+            }" :ref="(el) => {
                   if (el) statCountRefs[i] = el;
                 }
-              "
-            />
+                " />
             <template #fallback>{{ s.value }}</template>
           </ClientOnly>
           <span v-if="!s.numeric">{{ s.value }}</span>
@@ -48,30 +35,13 @@
         </h2>
       </div>
       <div class="steps-grid">
-        <div
-          class="ql-card step-card ql-reveal"
-          v-for="(step, i) in steps"
-          :key="i"
-          :style="{ transitionDelay: i * 0.1 + 's' }"
-        >
-          <div
-            class="step-icon"
-            :style="{
-              background: `linear-gradient(135deg,${step.color1},${step.color2})`,
-            }"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="26"
-              height="26"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="white"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              v-html="step.icon"
-            />
+        <div class="ql-card step-card ql-reveal" v-for="(step, i) in steps" :key="i"
+          :style="{ transitionDelay: i * 0.1 + 's' }">
+          <div class="step-icon" :style="{
+            background: `linear-gradient(135deg,${step.color1},${step.color2})`,
+          }">
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none"
+              stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" v-html="step.icon" />
           </div>
           <div class="step-num">{{ String(i + 1).padStart(2, "0") }}</div>
           <h3 class="step-title">{{ step.title }}</h3>
@@ -93,25 +63,10 @@
         </p>
       </div>
       <div class="formats-grid">
-        <div
-          class="ql-glass fmt-chip ql-reveal"
-          v-for="(f, i) in formats"
-          :key="i"
-          :style="{ transitionDelay: i * 0.05 + 's' }"
-          :title="f.name"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="22"
-            height="22"
-            viewBox="0 0 24 24"
-            fill="none"
-            :stroke="f.color"
-            stroke-width="1.8"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            v-html="f.icon"
-          />
+        <div class="ql-glass fmt-chip ql-reveal" v-for="(f, i) in formats" :key="i"
+          :style="{ transitionDelay: i * 0.05 + 's' }" :title="f.name">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+            :stroke="f.color" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" v-html="f.icon" />
           <span class="fmt-name">{{ f.name }}</span>
         </div>
       </div>
@@ -132,65 +87,27 @@
             Join thousands of developers and power users. Free, always.
           </p>
           <div class="cta-btns">
-            <button
-              @click="handleDownload"
-              :disabled="downloading || loading"
-              class="btn-primary"
-            >
-              <svg
-                v-if="!downloading && !loading"
-                xmlns="http://www.w3.org/2000/svg"
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
+            <button @click="handleDownload" :disabled="downloading || loading" class="btn-primary">
+              <svg v-if="!downloading && !loading" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
                 <polyline points="7 10 12 15 17 10" />
                 <line x1="12" y1="15" x2="12" y2="3" />
               </svg>
-              <svg
-                v-else
-                xmlns="http://www.w3.org/2000/svg"
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="spin"
-              >
+              <svg v-else xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="spin">
                 <path d="M21 12a9 9 0 1 1-6.219-8.56" />
               </svg>
               {{
                 downloading || loading ? "Fetching latest..." : downloadLabel
               }}
             </button>
-            <a
-              href="https://github.com/QL-Win/QuickLook"
-              target="_blank"
-              class="btn-ghost"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
+            <a href="https://github.com/QL-Win/QuickLook" target="_blank" class="btn-ghost">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path
-                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
-                />
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
               </svg>
               View on GitHub
             </a>
@@ -205,10 +122,13 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted } from "vue";
-import { ICountUp as CountUp } from 'vue-countup-v3'
+import { ref, computed, onMounted, defineAsyncComponent } from "vue";
 import { useRelease } from "../composables/useRelease";
 import { useRepoStats } from "../composables/useRepoStats";
+
+const CountUp = defineAsyncComponent(() =>
+  import('vue-countup-v3').then(m => m.ICountUp ?? m.default ?? m)
+)
 
 const { release, loading, fetchRelease, downloadLatestMsi } = useRelease();
 const { stats: repoStats, fetchRepoStats } = useRepoStats();
@@ -395,20 +315,24 @@ onMounted(async () => {
   gap: 1rem;
   margin: 2rem 0 0;
 }
+
 @media (min-width: 640px) {
   .stats-row {
     grid-template-columns: repeat(4, 1fr);
   }
 }
+
 .stat-card {
   padding: 1.25rem 1rem;
   text-align: center;
 }
+
 .stat-value {
   font-size: 1.75rem;
   font-weight: 800;
   margin-bottom: 0.25rem;
 }
+
 .stat-label {
   font-size: 0.72rem;
   color: var(--vp-c-text-3);
@@ -420,27 +344,33 @@ onMounted(async () => {
 .how-section {
   margin-top: 3rem;
 }
+
 .how-header {
   margin-bottom: 2rem;
 }
+
 .how-title {
   font-size: 1.6rem;
   font-weight: 800;
   margin: 0.5rem 0 0;
 }
+
 .steps-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.25rem;
 }
+
 @media (min-width: 640px) {
   .steps-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
 .step-card {
   padding: 1.75rem;
 }
+
 .step-icon {
   width: 52px;
   height: 52px;
@@ -451,6 +381,7 @@ onMounted(async () => {
   margin-bottom: 1rem;
   box-shadow: 0 6px 18px rgba(37, 99, 235, 0.25);
 }
+
 .step-num {
   font-size: 0.68rem;
   font-weight: 800;
@@ -459,11 +390,13 @@ onMounted(async () => {
   margin-bottom: 0.5rem;
   text-transform: uppercase;
 }
+
 .step-title {
   font-size: 1rem;
   font-weight: 700;
   margin: 0 0 0.5rem;
 }
+
 .step-desc {
   font-size: 0.875rem;
   color: var(--vp-c-text-2);
@@ -474,34 +407,41 @@ onMounted(async () => {
 .formats-section {
   margin-top: 3rem;
 }
+
 .formats-header {
   margin-bottom: 1.75rem;
 }
+
 .formats-title {
   font-size: 1.6rem;
   font-weight: 800;
   margin: 0.5rem 0 0.4rem;
 }
+
 .formats-sub {
   font-size: 0.9rem;
   color: var(--vp-c-text-2);
   margin: 0;
 }
+
 .formats-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0.75rem;
 }
+
 @media (min-width: 480px) {
   .formats-grid {
     grid-template-columns: repeat(4, 1fr);
   }
 }
+
 @media (min-width: 768px) {
   .formats-grid {
     grid-template-columns: repeat(6, 1fr);
   }
 }
+
 .fmt-chip {
   border-radius: 0.875rem;
   padding: 0.875rem 0.5rem;
@@ -515,11 +455,13 @@ onMounted(async () => {
     box-shadow 0.2s;
   transition-delay: 0s !important;
 }
+
 .fmt-chip:hover {
   transform: translateY(-4px) scale(1.06);
   box-shadow: 0 10px 24px rgba(37, 99, 235, 0.15);
   transition-delay: 0s !important;
 }
+
 .fmt-name {
   font-size: 0.72rem;
   font-weight: 600;
@@ -530,12 +472,14 @@ onMounted(async () => {
 .cta-section {
   margin-top: 3rem;
 }
+
 .cta-card {
   padding: 3rem 2rem;
   text-align: center;
   overflow: hidden;
   position: relative;
 }
+
 .cta-orb {
   position: absolute;
   border-radius: 50%;
@@ -543,6 +487,7 @@ onMounted(async () => {
   pointer-events: none;
   animation: floatOrb 7s ease-in-out infinite;
 }
+
 .orb1 {
   width: 180px;
   height: 180px;
@@ -550,6 +495,7 @@ onMounted(async () => {
   top: -40px;
   right: -30px;
 }
+
 .orb2 {
   width: 130px;
   height: 130px;
@@ -558,29 +504,36 @@ onMounted(async () => {
   left: -20px;
   animation-delay: -3s;
 }
+
 @keyframes floatOrb {
+
   0%,
   100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-14px);
   }
 }
+
 .cta-inner {
   position: relative;
   z-index: 1;
 }
+
 .cta-title {
   font-size: 1.65rem;
   font-weight: 800;
   margin: 0 0 0.75rem;
 }
+
 .cta-sub {
   font-size: 0.95rem;
   color: var(--vp-c-text-2);
   margin: 0 0 1.75rem;
 }
+
 .cta-btns {
   display: flex;
   flex-wrap: wrap;
@@ -608,6 +561,7 @@ onMounted(async () => {
   border: none;
   cursor: pointer;
 }
+
 .btn-primary::before {
   content: "";
   position: absolute;
@@ -615,21 +569,22 @@ onMounted(async () => {
   left: -100%;
   width: 60%;
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.2),
-    transparent
-  );
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent);
   transition: left 0.5s ease;
 }
+
 .btn-primary:hover::before {
   left: 140%;
 }
+
 .btn-primary:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 28px rgba(37, 99, 235, 0.38);
 }
+
 .btn-primary:disabled {
   opacity: 0.75;
   cursor: not-allowed;
@@ -655,6 +610,7 @@ onMounted(async () => {
     box-shadow 0.2s,
     background 0.2s;
 }
+
 .btn-ghost:hover {
   transform: translateY(-2px);
   background: var(--vp-c-brand-soft);
@@ -668,13 +624,16 @@ onMounted(async () => {
   color: var(--vp-c-text-3);
   font-family: "JetBrains Mono", monospace;
 }
+
 .spin {
   animation: spinning 0.8s linear infinite;
 }
+
 @keyframes spinning {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
