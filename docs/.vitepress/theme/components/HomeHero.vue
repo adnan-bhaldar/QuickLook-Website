@@ -206,7 +206,7 @@
 
 <script setup lang="ts">
 import { ref, computed, onMounted } from "vue";
-import CountUp from "vue-countup-v3";
+import { ICountUp as CountUp } from 'vue-countup-v3'
 import { useRelease } from "../composables/useRelease";
 import { useRepoStats } from "../composables/UseRepoStats";
 
