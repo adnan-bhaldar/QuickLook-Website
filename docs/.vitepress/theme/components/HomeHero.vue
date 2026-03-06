@@ -208,7 +208,7 @@
 import { ref, computed, onMounted } from "vue";
 import { ICountUp as CountUp } from 'vue-countup-v3'
 import { useRelease } from "../composables/useRelease";
-import { useRepoStats } from "../composables/UseRepoStats";
+import { useRepoStats } from "../composables/useRepoStats";
 
 const { release, loading, fetchRelease, downloadLatestMsi } = useRelease();
 const { stats: repoStats, fetchRepoStats } = useRepoStats();

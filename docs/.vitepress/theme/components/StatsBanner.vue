@@ -40,7 +40,7 @@
 <script setup lang="ts">
 import { ref, computed, onMounted } from "vue";
 import { ICountUp as CountUp } from 'vue-countup-v3'
-import { useRepoStats } from "../composables/UseRepoStats";
+import { useRepoStats } from "../composables/useRepoStats";
 
 const { stats: repoStats, fetchRepoStats } = useRepoStats();
 
