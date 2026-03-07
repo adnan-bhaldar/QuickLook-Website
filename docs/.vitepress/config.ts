@@ -60,6 +60,7 @@ export default defineConfig({
         items: [
           { text: 'System Requirements', link: '/resources/requirements' },
           { text: 'Troubleshooting', link: '/resources/troubleshooting' },
+          { text: 'Changelog', link: '/resources/changelog' },
           { text: 'GitHub Repository', link: 'https://github.com/QL-Win/QuickLook', target: '_blank' },
         ],
       },
