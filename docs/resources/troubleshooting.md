@@ -27,9 +27,31 @@ description: Fix common issues with QuickLook on Windows.
 
 ---
 
+## Preview window opens off-screen
+
+This can happen when switching between monitors with different DPI settings.
+
+**Fix:** Close QuickLook, then delete the config file:
+1. Press `Win + R` and type `%AppData%\QuickLook`
+2. Delete `config.json`
+3. Relaunch QuickLook — the window position will reset
+
+---
+
+## QuickLook not starting with Windows
+
+**Re-enable it in startup settings:**
+1. Press `Ctrl + Shift + Esc` to open Task Manager
+2. Go to the **Startup** tab
+3. Find **QuickLook** and set it to **Enabled**
+4. Restart your PC
+
+---
+
 ## Video/audio files show a blank preview
 
 Install the required codecs:
+
 - **HEVC/H.265:** [HEVC Video Extensions](https://www.microsoft.com/store/apps/9nmzlz57r3t7)
 - **AV1:** [AV1 Video Extension](https://www.microsoft.com/store/apps/9mvzqvxjbq9v)
 
@@ -40,15 +62,22 @@ QuickLook uses Windows' built-in media engine, so any codec installed system-wid
 ## HEIC images show as blank
 
 Install the **HEIF Image Extensions** from the Microsoft Store:
-[microsoft.com/store/apps/9pmmsr1cgpwg](https://www.microsoft.com/store/apps/9pmmsr1cgpwg)
+[HEIF Image Extensions](https://www.microsoft.com/store/apps/9pmmsr1cgpwg)
 
 ---
 
 ## Office files (.docx, .xlsx) don't preview
 
 Office file preview requires the **QL-Office plugin**:
-1. Download from [github.com/QL-Win/QuickLook.Plugin.Office](https://github.com/QL-Win/QuickLook.Plugin.Office/releases)
-2. Double-click the `.qlplugin` file to install
+1. Download from [github.com/QL-Win/QuickLook.Plugin.Office](https://github.com/QL-Win/QuickLook.Plugin.OfficeViewer/releases)
+2. Press `space` on `.qlplugin` file to install
+---
+
+## A plugin isn't working after install
+
+**Restart QuickLook after installing any plugin.** Right-click the tray icon → Quit, then relaunch. QuickLook only loads plugins on startup.
+
+**Verify the plugin installed correctly.** Check that its folder exists in `%AppData%\QuickLook\Plugins`.
 
 ---
 
@@ -68,7 +97,8 @@ Office file preview requires the **QL-Office plugin**:
 :::
 
 When reporting a bug, please include:
-- Windows version (`winver`)
+
+- Windows version (press `Win + R`, type `winver` and hit Enter)
 - QuickLook version (tray icon → About)
 - The file type that's causing issues
 - Contents of `%AppData%\QuickLook\QuickLook.log`
