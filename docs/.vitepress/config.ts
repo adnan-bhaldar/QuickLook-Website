@@ -66,7 +66,7 @@ export default defineConfig({
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/QL-Win/QuickLook' },
+      { icon: 'github', link: 'https://github.com/adnan-bhaldar/QuickLook-Website' },
     ],
 
     footer: {
@@ -75,7 +75,7 @@ export default defineConfig({
     },
 
     editLink: {
-      pattern: 'https://github.com/QL-Win/QuickLook/edit/master/docs/:path',
+      pattern: 'https://github.com/adnan-bhaldar/QuickLook-Website/edit/main/docs/:path',
       text: 'Edit this page on GitHub',
     },
 
