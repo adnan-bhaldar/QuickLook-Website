@@ -113,7 +113,7 @@ body::after {
   backdrop-filter: blur(20px) saturate(160%) !important;
   -webkit-backdrop-filter: blur(20px) saturate(160%) !important;
   background: var(--vp-nav-bg-color) !important;
-  border-bottom: 1px solid var(--vp-c-border) !important;
+  border-bottom: 2px solid var(--vp-c-border) !important;
   transition: background 0.35s ease !important;
 }
 
@@ -495,46 +495,6 @@ kbd {
   background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.3), transparent);
   border: none;
   margin: 2rem 0;
-}
-
-/* ── Desktop nav dropdown (VPFlyout) ───────────────────────── */
-
-/* Caret rotation when open */
-.VPFlyout .button .vpi-chevron-down {
-  transition: transform 0.25s ease !important;
-}
-
-.VPFlyout.open .button .vpi-chevron-down {
-  transform: rotate(180deg) !important;
-}
-
-/* Dropdown panel slide-in */
-.VPFlyout.open .menu {
-  animation: dropdownIn 0.2s cubic-bezier(0.22, 0.68, 0, 1.2) forwards;
-}
-
-@keyframes dropdownIn {
-  from {
-    opacity: 0;
-    transform: translateY(-6px) scale(0.97);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-/* Desktop dropdown item hover */
-.VPMenu .VPMenuLink a {
-  transition: color 0.2s ease, padding-left 0.2s ease, background 0.2s ease !important;
-  border-radius: 0.5rem;
-}
-
-.VPMenu .VPMenuLink a:hover {
-  color: var(--vp-c-brand-1) !important;
-  padding-left: 1.1rem !important;
-  background: var(--vp-c-brand-soft) !important;
 }
 
 /* ── Mobile nav screen (VPNavScreen) ───────────────────────── */
