@@ -61,11 +61,13 @@ const RAW_URL =
 function parseMarkdown(md: string): string {
   return (
     md
-      // h2
-      .replace(/^## (.+)$/gm, "<h2>$1</h2>")
-      // h3
+      // blockquotes first (before any other rules)
+      .replace(/^ *> ?(.*)$/gm, (_, content) =>
+        content.trim() ? `<blockquote>${content}</blockquote>` : ''
+      )
+      // h3 before h2 before h1 (order matters)
       .replace(/^### (.+)$/gm, "<h3>$1</h3>")
-      // h1
+      .replace(/^## (.+)$/gm, "<h2>$1</h2>")
       .replace(/^# (.+)$/gm, "<h1>$1</h1>")
       // bold
       .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
