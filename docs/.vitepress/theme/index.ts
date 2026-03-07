@@ -8,6 +8,7 @@ import InstallTabs from './components/InstallTabs.vue'
 import ShortcutRow from './components/ShortcutRow.vue'
 import StatsBanner from './components/StatsBanner.vue'
 import HomeHero from './components/HomeHero.vue'
+import ChangelogViewer from './components/ChangelogViewer.vue'
 
 export default {
   extends: DefaultTheme,
@@ -19,5 +20,6 @@ export default {
     app.component('ShortcutRow', ShortcutRow)
     app.component('StatsBanner', StatsBanner)
     app.component('HomeHero', HomeHero)
+    app.component('ChangelogViewer', ChangelogViewer)
   },
 }
