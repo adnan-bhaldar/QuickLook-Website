@@ -66,7 +66,7 @@ export default defineConfig({
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/QL-Win/QuickLook' },
+      { icon: 'github', link: 'https://github.com/adnan-bhaldar/QuickLook-Website' },
     ],
 
     footer: {
