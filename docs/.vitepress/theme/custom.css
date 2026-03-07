@@ -562,3 +562,9 @@ kbd {
   height: 100dvh !important;
   min-height: 100dvh !important;
 }
+
+/* ── Fix table overflow in content ──────────────────────────── */
+.vp-doc table {
+  display: table !important;
+  width: 100% !important;
+}

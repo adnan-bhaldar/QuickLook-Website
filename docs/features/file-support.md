@@ -17,11 +17,8 @@ QuickLook supports over **50 file types natively**, with the plugin ecosystem ex
 
 | Plugin | Formats |
 |---|---|
-| [QL-Office](https://github.com/QL-Win/QuickLook.Plugin.Office) | `.docx` `.xlsx` `.pptx` `.doc` `.xls` `.ppt` |
-| [QL-ePub](https://github.com/QL-Win/QuickLook.Plugin.EPub) | `.epub` |
-| [QL-Markdown](https://github.com/QL-Win/QuickLook.Plugin.MarkdownViewer) | `.md` `.mdx` `.markdown` |
-| [QL-3D / GLTF](https://github.com/QL-Win/QuickLook.Plugin.GLTFViewer) | `.stl` `.obj` `.gltf` `.glb` |
-| [QL-AppxPackage](https://github.com/QL-Win/QuickLook.Plugin.AppxPackage) | `.appx` `.appxbundle` `.msix` |
+| [QL-Office](https://github.com/QL-Win/QuickLook.Plugin.OfficeViewer/releases) | `.docx` `.xlsx` `.pptx` `.doc` `.xls` `.ppt` |
+| [QL-ePub](https://github.com/QL-Win/QuickLook.Plugin.EpubViewer/releases) | `.epub` |
 
 ## Format Not Listed?
 
