@@ -75,7 +75,7 @@ export default defineConfig({
     },
 
     editLink: {
-      pattern: 'https://github.com/adnan-bhaldar/QuickLook-Website/edit/master/docs/:path',
+      pattern: 'https://github.com/adnan-bhaldar/QuickLook-Website/edit/main/docs/:path',
       text: 'Edit this page on GitHub',
     },
 
