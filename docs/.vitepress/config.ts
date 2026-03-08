@@ -61,7 +61,7 @@ export default defineConfig({
           { text: 'System Requirements', link: '/resources/requirements' },
           { text: 'Troubleshooting', link: '/resources/troubleshooting' },
           { text: 'Changelog', link: '/resources/changelog' },
-          { text: 'GitHub Repository', link: 'https://github.com/QL-Win/QuickLook', target: '_blank' },
+          // { text: 'GitHub Repository', link: 'https://github.com/QL-Win/QuickLook', target: '_blank' },
         ],
       },
     ],
@@ -75,10 +75,10 @@ export default defineConfig({
       copyright: `© ${new Date().getFullYear()} QL-Win · Designed by <a href="https://github.com/adnan-bhaldar" target="_blank" rel="noopener">Adnan Bhaldar</a>`,
     },
 
-    editLink: {
-      pattern: 'https://github.com/adnan-bhaldar/QuickLook-Website/edit/main/docs/:path',
-      text: 'Edit this page on GitHub',
-    },
+    // editLink: {
+    //   pattern: 'https://github.com/adnan-bhaldar/QuickLook-Website/edit/main/docs/:path',
+    //   text: 'Edit this page on GitHub',
+    // },
 
     outline: {
       level: [2, 3],
