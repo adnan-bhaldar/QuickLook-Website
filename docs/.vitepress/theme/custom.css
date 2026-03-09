@@ -114,7 +114,7 @@ body::after {
   -webkit-backdrop-filter: blur(20px) saturate(160%) !important;
   background: var(--vp-nav-bg-color) !important;
   border-bottom: 2px solid var(--vp-c-border) !important;
-  transition: background 0.35s ease !important;
+  /* transition: background 1.35s ease !important; */
 }
 
 /* ── Sidebar glass ──────────────────────────────────────────── */
