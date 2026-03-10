@@ -29,4 +29,4 @@ Plugin management via a Settings panel is not yet available. To remove a plugin,
 :::
 
 **Resources:**
-- [Example Plugins on GitHub](https://github.com/QL-Win/QuickLook/wiki/Available-Plugins)
+- [Available Plugins](https://github.com/QL-Win/QuickLook/wiki/Available-Plugins)
