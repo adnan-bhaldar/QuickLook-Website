@@ -76,6 +76,7 @@ npm run docs:preview
 │   │
 │   ├── public/
 │   │   ├── favicon.ico
+│   │   ├── og-image.png
 │   │   ├── favicon.webp
 │   │   └── logo.webp
 │   │
@@ -112,5 +113,6 @@ Contributions are welcome! Please read the [contributing guidelines](.github/PUL
 ---
 
 ## 📄 License
+
 
 This documentation site is open source. QuickLook itself is licensed under [GPL-3.0](https://github.com/QL-Win/QuickLook?tab=GPL-3.0-1-ov-file#readme).
