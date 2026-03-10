@@ -13,6 +13,13 @@ export default defineConfig({
     ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
     ['link', { href: 'https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap', rel: 'stylesheet' }],
     ['meta', { name: 'theme-color', content: '#2563eb' }],
+    ['meta', { property: 'og:title', content: 'QuickLook' }],
+    ['meta', { property: 'og:description', content: 'Bring macOS Quick Look to Windows — instant file previews with Space.' }],
+    ['meta', { property: 'og:image', content: 'https://quicklookapp.vercel.app/og-image.png' }],
+    ['meta', { property: 'og:url', content: 'https://quicklookapp.vercel.app' }],
+    ['meta', { property: 'og:type', content: 'website' }],
+    ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
+    ['meta', { name: 'twitter:image', content: 'https://quicklookapp.vercel.app/og-image.png' }],
   ],
 
   themeConfig: {
