@@ -150,6 +150,10 @@ onMounted(() => {
 
 .fmt-card {
   padding: 1.125rem;
+    background: transparent !important;
+  border: 1px solid var(--vp-c-border) !important;
+  position: relative;
+  overflow: hidden;
 }
 
 .fmt-head {

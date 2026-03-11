@@ -325,6 +325,10 @@ onMounted(async () => {
 .stat-card {
   padding: 1.25rem 1rem;
   text-align: center;
+    background: transparent !important;
+  border: 1px solid var(--vp-c-border) !important;
+  position: relative;
+  overflow: hidden;
 }
 
 .stat-value {
@@ -369,6 +373,10 @@ onMounted(async () => {
 
 .step-card {
   padding: 1.75rem;
+  background: transparent !important;
+  border: 1px solid var(--vp-c-border) !important;
+  position: relative;
+  overflow: hidden;
 }
 
 .step-icon {
@@ -450,6 +458,10 @@ onMounted(async () => {
   align-items: center;
   gap: 0.45rem;
   cursor: default;
+  position: relative;
+  overflow: hidden;
+  background: transparent !important;
+  border: 1px solid var(--vp-c-border) !important;
   transition:
     transform 0.2s cubic-bezier(0.22, 0.68, 0, 1.2),
     box-shadow 0.2s;
@@ -478,6 +490,8 @@ onMounted(async () => {
   text-align: center;
   overflow: hidden;
   position: relative;
+  background: transparent !important;
+  border: 1px solid var(--vp-c-border);
 }
 
 .cta-orb {

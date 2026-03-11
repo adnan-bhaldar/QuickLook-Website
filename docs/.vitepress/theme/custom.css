@@ -112,9 +112,8 @@ body::after {
 .VPNav {
   backdrop-filter: blur(20px) saturate(160%) !important;
   -webkit-backdrop-filter: blur(20px) saturate(160%) !important;
-  background: var(--vp-nav-bg-color) !important;
-  border-bottom: 2px solid var(--vp-c-border) !important;
-  /* transition: background 0.35s ease !important; */
+  background: transparent !important;
+  border-bottom: 1px solid var(--vp-c-border) !important;
 }
 
 /* ── Sidebar glass ──────────────────────────────────────────── */
@@ -324,13 +323,29 @@ kbd {
 
 /* Home features */
 .VPFeatures .VPFeature {
-  background: var(--ql-glass-bg) !important;
-  backdrop-filter: blur(16px) saturate(160%) !important;
-  -webkit-backdrop-filter: blur(16px) saturate(160%) !important;
-  border: 1px solid var(--ql-glass-border) !important;
-  box-shadow: var(--ql-glass-shadow) !important;
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: 1px solid var(--vp-c-border) !important;
+  box-shadow: none !important;
   border-radius: 1.125rem !important;
+  position: relative !important;
+  overflow: hidden !important;
   transition: transform 0.3s cubic-bezier(.22, .68, 0, 1.2), box-shadow 0.3s ease !important;
+}
+
+.VPFeatures .VPFeature::before {
+  content: '';
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: rgba(59, 130, 246, 0.12);
+  filter: blur(35px);
+  top: -30px;
+  right: -20px;
+  pointer-events: none;
+  animation: floatOrb 7s ease-in-out infinite;
 }
 
 .VPFeatures .VPFeature:hover {
@@ -567,4 +582,45 @@ kbd {
 .vp-doc table {
   display: table !important;
   width: 100% !important;
+}
+
+/* ── Prev/Next page buttons ──────────────────────────────────── */
+.VPDocFooter .pager-link {
+  border: 1px solid var(--vp-c-border) !important;
+  border-radius: 1rem !important;
+  padding: 1rem 1.25rem !important;
+  background: var(--ql-glass-bg) !important;
+  backdrop-filter: blur(12px) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease !important;
+}
+
+.VPDocFooter .pager-link:hover {
+  border-color: var(--vp-c-brand-1) !important;
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.18) !important;
+}
+
+.VPDocFooter .pager-link .title {
+  color: var(--vp-c-brand-1) !important;
+  font-weight: 600 !important;
+  font-size: 0.95rem !important;
+}
+
+.VPDocFooter .pager-link .desc {
+  font-size: 0.75rem !important;
+  color: var(--vp-c-text-3) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  font-weight: 600 !important;
+}
+
+/* ── Search bar visibility ───────────────────────────────────── */
+.VPNavBarSearch .DocSearch-Button {
+  background: rgba(37, 99, 235, 0.06) !important;
+  border: 1px solid rgba(37, 99, 235, 0.2) !important;
+  border-radius: 0.6rem !important;
+}
+
+.dark .VPNavBarSearch .DocSearch-Button {
+  background: rgba(59, 130, 246, 0.08) !important;
+  border: 1px solid rgba(59, 130, 246, 0.2) !important;
 }
