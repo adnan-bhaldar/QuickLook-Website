@@ -112,8 +112,8 @@ body::after {
 .VPNav {
   backdrop-filter: blur(20px) saturate(160%) !important;
   -webkit-backdrop-filter: blur(20px) saturate(160%) !important;
-  background: transparent !important;
-  border-bottom: 1px solid var(--vp-c-border) !important;
+  background: var(--vp-nav-bg-color) !important;
+  border-bottom: 2px solid var(--vp-c-border) !important;
 }
 
 /* ── Sidebar glass ──────────────────────────────────────────── */
@@ -613,14 +613,16 @@ kbd {
   font-weight: 600 !important;
 }
 
-/* ── Search bar visibility ───────────────────────────────────── */
+/* ── Search bar visibility in light mode ─────────────────────── */
 .VPNavBarSearch .DocSearch-Button {
-  background: rgba(37, 99, 235, 0.06) !important;
-  border: 1px solid rgba(37, 99, 235, 0.2) !important;
+  background: rgba(255, 255, 255, 0.8) !important;
+  border: 1px solid rgba(37, 99, 235, 0.25) !important;
   border-radius: 0.6rem !important;
+  box-shadow: 0 1px 4px rgba(37, 99, 235, 0.08) !important;
 }
 
 .dark .VPNavBarSearch .DocSearch-Button {
-  background: rgba(59, 130, 246, 0.08) !important;
+  background: rgba(255, 255, 255, 0.05) !important;
   border: 1px solid rgba(59, 130, 246, 0.2) !important;
+  box-shadow: none !important;
 }
