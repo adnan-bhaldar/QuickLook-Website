@@ -632,6 +632,10 @@ kbd {
   text-decoration: none !important;
 }
 
-.VPFooter a:hover {
+.dark .VPFooter a:hover {
   color: #ffffff !important;
+}
+
+.VPFooter a:hover {
+  color: var(--vp-c-brand-1) !important;
 }
