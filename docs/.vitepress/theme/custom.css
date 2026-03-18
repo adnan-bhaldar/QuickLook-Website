@@ -161,6 +161,10 @@ body::after {
   font-family: 'Sora', sans-serif !important;
 }
 
+.vp-doc a {
+  text-decoration: none !important;
+}
+
 .vp-doc h1,
 .vp-doc h2,
 .vp-doc h3,
