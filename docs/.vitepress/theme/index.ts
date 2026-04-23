@@ -1,4 +1,5 @@
 import DefaultTheme from 'vitepress/theme'
+import MyLayout from './Layout.vue'
 import './custom.css'
 
 import FeatureGrid from './components/FeatureGrid.vue'
@@ -12,6 +13,7 @@ import ChangelogViewer from './components/ChangelogViewer.vue'
 
 export default {
   extends: DefaultTheme,
+  Layout: MyLayout,
   enhanceApp({ app }) {
     app.component('FeatureGrid', FeatureGrid)
     app.component('FormatTable', FormatTable)
