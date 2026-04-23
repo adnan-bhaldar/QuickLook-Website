@@ -1,5 +1,5 @@
 <template>
-  <div class="feature-grid">
+  <div class="feature-grid" ref="gridRef">
     <div
       class="ql-card feat-card ql-reveal"
       v-for="(f, i) in features"
@@ -30,7 +30,10 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted } from "vue";
+import { onMounted, ref } from "vue";
+
+const gridRef = ref<HTMLElement | null>(null);
+
 const features = [
   {
     title: "Instant Preview",
@@ -75,6 +78,7 @@ const features = [
     icon: '<rect x="2" y="4" width="20" height="16" rx="2"/><path d="M8 10h8"/><path d="M8 14h4"/>',
   },
 ];
+
 onMounted(() => {
   const obs = new IntersectionObserver(
     (entries) =>
@@ -86,7 +90,7 @@ onMounted(() => {
       }),
     { threshold: 0.1 },
   );
-  document.querySelectorAll(".ql-reveal").forEach((el) => obs.observe(el));
+  gridRef.value?.querySelectorAll(".ql-reveal").forEach((el) => obs.observe(el));
 });
 </script>
 
