@@ -45,7 +45,6 @@ async function fetchRelease(): Promise<Release | null> {
       name: msiAsset.name,
       publishedAt: data.published_at ?? '',
     }
-
     return release.value
   } catch (e: any) {
     error.value = e.message
