@@ -13,32 +13,32 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted } from "vue";
-const shortcuts = [
-  { action: "Toggle preview", key: "Space" },
-  { action: "Close preview", key: "Esc" },
-  { action: "Full screen", key: "F11" },
-  { action: "Open with default app", key: "Enter" },
-  { action: "Zoom in", key: "Scroll Up" },
-  { action: "Zoom out", key: "Scroll Down" },
-  { action: "Reset zoom", key: "Ctrl 0" },
-  { action: "Navigate images", key: "← →" },
-  { action: "Next page (PDF)", key: "↓ / PgDn" },
-  { action: "Previous page", key: "↑ / PgUp" },
-];
-onMounted(() => {
-  const obs = new IntersectionObserver(
-    (entries) =>
-      entries.forEach((e) => {
-        if (e.isIntersecting) {
-          e.target.classList.add("visible");
-          obs.unobserve(e.target);
-        }
-      }),
-    { threshold: 0.08 },
-  );
-  document.querySelectorAll(".ql-reveal").forEach((el) => obs.observe(el));
-});
+  import { onMounted } from "vue";
+  const shortcuts = [
+    { action: "Toggle preview", key: "Space" },
+    { action: "Close preview", key: "Esc" },
+    { action: "Full screen", key: "F11" },
+    { action: "Open with default app", key: "Enter" },
+    { action: "Zoom in", key: "Scroll Up" },
+    { action: "Zoom out", key: "Scroll Down" },
+    { action: "Reset zoom", key: "Ctrl 0" },
+    { action: "Navigate images", key: "← →" },
+    { action: "Next page (PDF)", key: "↓ / PgDn" },
+    { action: "Previous page", key: "↑ / PgUp" },
+  ];
+  onMounted(() => {
+    const obs = new IntersectionObserver(
+      (entries) =>
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add("visible");
+            obs.unobserve(e.target);
+          }
+        }),
+      { threshold: 0.08 },
+    );
+    document.querySelectorAll(".ql-reveal").forEach((el) => obs.observe(el));
+  });
 </script>
 
 <style scoped>
