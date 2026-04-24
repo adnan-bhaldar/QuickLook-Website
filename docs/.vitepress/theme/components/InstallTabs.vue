@@ -255,77 +255,77 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
-import { useRelease } from "../composables/useRelease";
-
-const { release, loading, fetchRelease, downloadLatestMsi } = useRelease();
-
-const downloading = ref(false);
-const active = ref("store");
-const copied = ref("");
-const toastMsg = ref("");
-
-async function handleDownload() {
-  downloading.value = true;
-  await downloadLatestMsi();
-  downloading.value = false;
-}
-
-onMounted(() => {
-  fetchRelease();
-});
-
-const tabs = [
-  { id: "store", label: "Microsoft Store" },
-  { id: "github", label: "GitHub" },
-  { id: "cli", label: "WinGet / Scoop" },
-];
-const storeSteps = [
-  {
-    t: "Open the Microsoft Store",
-    d: 'Press <kbd>Win</kbd> and search for "Microsoft Store".',
-  },
-  {
-    t: "Search for QuickLook",
-    d: "Look for the app by <strong>Paddy Xu</strong>.",
-  },
-  { t: "Click Install", d: "QuickLook starts automatically with Windows." },
-  { t: "Note on updates", d: "⚠️ Microsoft Store updates may lag behind GitHub releases. For the latest version immediately, use the <strong>GitHub</strong> tab." },
-];
-const ghSteps = [
-  {
-    t: "Click Download",
-    d: "Hit the button below — it fetches the latest <code>.msi</code> directly from GitHub Releases.",
-  },
-  {
-    t: "Run the installer",
-    d: "Double-click the downloaded <code>.msi</code> and follow the wizard.",
-  },
-  {
-    t: "Done",
-    d: "QuickLook is installed. Look for its icon in the system tray near the clock.",
-  },
-];
-const pms = [
-  { n: "📦 WinGet", color: "#4ade80", code: "winget install QL-Win.QuickLook" },
-  {
-    n: "🥄 Scoop",
-    color: "#facc15",
-    code: "scoop bucket add extras\nscoop install quicklook",
-  },
-  { n: "🍫 Chocolatey", color: "#2dd4bf", code: "choco install quicklook" },
-];
-let timer: ReturnType<typeof setTimeout>;
-function copy(code: string, name: string) {
-  navigator.clipboard.writeText(code);
-  copied.value = name;
-  toastMsg.value = `${name} copied!`;
-  clearTimeout(timer);
-  timer = setTimeout(() => {
-    copied.value = "";
-    toastMsg.value = "";
-  }, 2200);
-}
+  import { ref, onMounted } from "vue";
+  import { useRelease } from "../composables/useRelease";
+  
+  const { release, loading, fetchRelease, downloadLatestMsi } = useRelease();
+  
+  const downloading = ref(false);
+  const active = ref("store");
+  const copied = ref("");
+  const toastMsg = ref("");
+  
+  async function handleDownload() {
+    downloading.value = true;
+    await downloadLatestMsi();
+    downloading.value = false;
+  }
+  
+  onMounted(() => {
+    fetchRelease();
+  });
+  
+  const tabs = [
+    { id: "store", label: "Microsoft Store" },
+    { id: "github", label: "GitHub" },
+    { id: "cli", label: "WinGet / Scoop" },
+  ];
+  const storeSteps = [
+    {
+      t: "Open the Microsoft Store",
+      d: 'Press <kbd>Win</kbd> and search for "Microsoft Store".',
+    },
+    {
+      t: "Search for QuickLook",
+      d: "Look for the app by <strong>Paddy Xu</strong>.",
+    },
+    { t: "Click Install", d: "QuickLook starts automatically with Windows." },
+    { t: "Note on updates", d: "⚠️ Microsoft Store updates may lag behind GitHub releases. For the latest version immediately, use the <strong>GitHub</strong> tab." },
+  ];
+  const ghSteps = [
+    {
+      t: "Click Download",
+      d: "Hit the button below — it fetches the latest <code>.msi</code> directly from GitHub Releases.",
+    },
+    {
+      t: "Run the installer",
+      d: "Double-click the downloaded <code>.msi</code> and follow the wizard.",
+    },
+    {
+      t: "Done",
+      d: "QuickLook is installed. Look for its icon in the system tray near the clock.",
+    },
+  ];
+  const pms = [
+    { n: "📦 WinGet", color: "#4ade80", code: "winget install QL-Win.QuickLook" },
+    {
+      n: "🥄 Scoop",
+      color: "#facc15",
+      code: "scoop bucket add extras\nscoop install quicklook",
+    },
+    { n: "🍫 Chocolatey", color: "#2dd4bf", code: "choco install quicklook" },
+  ];
+  let timer: ReturnType<typeof setTimeout>;
+  function copy(code: string, name: string) {
+    navigator.clipboard.writeText(code);
+    copied.value = name;
+    toastMsg.value = `${name} copied!`;
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      copied.value = "";
+      toastMsg.value = "";
+    }, 2200);
+  }
 </script>
 
 <style scoped>
