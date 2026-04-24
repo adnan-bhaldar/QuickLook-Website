@@ -26,7 +26,7 @@
 
 <script setup lang="ts">
 import { ref, computed, onMounted, defineAsyncComponent } from "vue";
-import { useRepoStats } from "../composables/useRepoStats";
+import { useRepoStats } from "../composables/useRepoStats.ts";
 
 const CountUp = defineAsyncComponent(() =>
   import('vue-countup-v3').then(m => m.ICountUp ?? m.default ?? m)
