@@ -1,10 +1,24 @@
+<div align="center">
+
+<img src="docs/public/favicon.webp" width="90" alt="QuickLook Logo" />
+
 # QuickLook Docs
 
-Official documentation website for [QuickLook](https://github.com/adnan-bhaldar/QuickLook-Website) — bringing macOS Quick Look to Windows.
+**Official homepage for QuickLook — macOS Quick Look for Windows.**
 
-Built with [VitePress](https://vitepress.dev) + [Tailwind CSS v4](https://tailwindcss.com) + Vue 3.
+<br/>
 
-🌐 **Live site:** [https://quicklookapp.vercel.app](https://quicklookapp.vercel.app)
+[![Live Site](https://img.shields.io/badge/🌐%20Live%20Site-quicklookapp.vercel.app-2563eb?style=for-the-badge&logoColor=white)](https://quicklookapp.vercel.app)
+
+<br/>
+
+[![VitePress](https://img.shields.io/badge/VitePress-1.5-646cff?style=for-the-badge&logo=vite&logoColor=white)](https://vitepress.dev)
+[![Vue](https://img.shields.io/badge/Vue-3-42b883?style=for-the-badge&logo=vue.js&logoColor=white)](https://vuejs.org)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-v4-38bdf8?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
+[![Vercel](https://img.shields.io/badge/Vercel-Deployed-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com)
+[![License](https://img.shields.io/badge/License-GPL--3.0-22c55e?style=for-the-badge&logo=opensourceinitiative&logoColor=white)](https://github.com/QL-Win/QuickLook?tab=GPL-3.0-1-ov-file)
+
+</div>
 
 ---
 
@@ -91,29 +105,23 @@ npm run docs:preview
 
 ## 🛠️ Tech Stack
 
-| Tool | Purpose |
-|---|---|
-| [VitePress](https://vitepress.dev) | Static site generator |
-| [Vue 3](https://vuejs.org) | Component framework |
-| [Tailwind CSS v4](https://tailwindcss.com) | Utility-first CSS |
-| [Sora](https://fonts.google.com/specimen/Sora) | UI font |
-| [JetBrains Mono](https://fonts.google.com/specimen/JetBrains+Mono) | Code font |
-| [Vercel](https://vercel.com) | Hosting & deployment |
+| | Tool | Purpose |
+|---|---|---|
+| <img src="https://vitepress.dev/vitepress-logo-mini.svg" width="20"/> | [VitePress](https://vitepress.dev) | Static site generator |
+| <img src="https://vuejs.org/logo.svg" width="20"/> | [Vue 3](https://vuejs.org) | Component framework |
+| <img src="https://tailwindcss.com/favicons/favicon-32x32.png" width="20"/> | [Tailwind CSS v4](https://tailwindcss.com) | Utility-first CSS |
+| <img src="https://fonts.gstatic.com/s/i/productlogos/googleg/v6/24px.svg" width="20"/> | [Sora](https://fonts.google.com/specimen/Sora) | UI font |
+| <img src="https://fonts.gstatic.com/s/i/productlogos/googleg/v6/24px.svg" width="20"/> | [JetBrains Mono](https://fonts.google.com/specimen/JetBrains+Mono) | Code font |
+| <img src="https://assets.vercel.com/image/upload/front/favicon/vercel/favicon.ico" width="20"/> | [Vercel](https://vercel.com) | Hosting & deployment |
 
 ---
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please read the [contributing guidelines](.github/PULL_REQUEST_TEMPLATE.md) and use the appropriate issue template.
+Contributions are welcome! Please use the appropriate issue template.
 
-- 🐛 [Report a bug](https://github.com/adnan-bhaldar/QuickLook-Website/issues/new?template=bug_report.md)
-- 💡 [Request a feature](https://github.com/adnan-bhaldar/QuickLook-Website/issues/new?template=feature_request.md)
-- 🎨 [Suggest a UI improvement](https://github.com/adnan-bhaldar/QuickLook-Website/issues/new?template=ui_improvement.md)
-
----
-
-## 📄 License
-
-
-This documentation site is open source. QuickLook itself is licensed under [GPL-3.0](https://github.com/QL-Win/QuickLook?tab=GPL-3.0-1-ov-file#readme).
-
+| Type | Link |
+|---|---|
+| 🐛 Bug report | [Report a bug](https://github.com/adnan-bhaldar/QuickLook-Website/issues/new?template=bug_report.md) |
+| 💡 Feature request | [Request a feature](https://github.com/adnan-bhaldar/QuickLook-Website/issues/new?template=feature_request.md) |
+| 🎨 UI improvement | [Suggest a UI improvement](https://github.com/adnan-bhaldar/QuickLook-Website/issues/new?template=ui_improvement.md) |
