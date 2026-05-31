@@ -15,7 +15,7 @@
             if (el) countRefs[i] = el;
           }
             " />
-          <template #fallback>{{ s.v }}</template>
+          <template #placeholder>{{ s.v }}</template>
         </ClientOnly>
         <span v-if="!s.numeric">{{ s.v }}</span>
       </div>

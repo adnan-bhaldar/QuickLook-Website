@@ -1,5 +1,5 @@
 <template>
-  <div class="feature-grid">
+  <div class="feature-grid" ref="gridContainer">
     <div
       class="ql-card feat-card ql-reveal"
       v-for="(f, i) in features"
@@ -37,7 +37,7 @@
       desc: "Opens in milliseconds. No launch overhead, no spinners. Just Space and see.",
       c1: "#1d4ed8",
       c2: "#3b82f6",
-      icon: '<bolt/><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>',
+      icon: '<path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>',
     },
     {
       title: "50+ File Formats",
