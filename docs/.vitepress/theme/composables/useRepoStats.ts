@@ -33,6 +33,8 @@ function formatCount(n: number): FormattedStat {
 }
 
 async function fetchRepoStats(): Promise<RepoStats | null> {
+  // 1. FIXED: Prevent the static build server from running this fetch
+  if (typeof window === 'undefined') return null
   if (stats.value) return stats.value
   if (loading.value) return null
 
