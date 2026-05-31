@@ -6,18 +6,20 @@
       }
         ">
       <div class="val ql-gradient-text">
-        <ClientOnly>
-          <CountUp v-if="s.numeric && s.raw > 0" :endVal="s.raw" :duration="2.2" :options="{
-            separator: ',',
-            suffix: s.suffix,
-            decimalPlaces: s.decimals,
-          }" :ref="(el) => {
-            if (el) countRefs[i] = el;
-          }
-            " />
-          <template #placeholder>{{ s.v }}</template>
-        </ClientOnly>
-        <span v-if="!s.numeric">{{ s.v }}</span>
+        <span v-if="s.numeric">
+          <ClientOnly>
+            <CountUp v-if="s.raw > 0" :endVal="s.raw" :duration="2.2" :options="{
+              separator: ',',
+              suffix: s.suffix,
+              decimalPlaces: s.decimals,
+            }" :ref="(el) => {
+                if (el) countRefs[i] = el;
+              }" />
+            <span v-else>{{ s.v }}</span>
+            <template #placeholder><span>{{ s.v }}</span></template>
+          </ClientOnly>
+        </span>
+        <span v-else>{{ s.v }}</span>
       </div>
       <div class="lbl">{{ s.l }}</div>
     </div>

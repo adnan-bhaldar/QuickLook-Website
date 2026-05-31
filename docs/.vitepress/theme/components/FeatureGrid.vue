@@ -30,7 +30,10 @@
 </template>
 
 <script setup lang="ts">
-  import { onMounted } from "vue";
+  import { onMounted, ref } from "vue";
+
+  const gridContainer = ref<HTMLElement | null>(null);
+
   const features = [
     {
       title: "Instant Preview",
@@ -86,8 +89,10 @@
         }),
       { threshold: 0.1 },
     );
-    document.querySelectorAll(".ql-reveal").forEach((el) => obs.observe(el));
-  });
+    if (gridContainer.value) {
+    gridContainer.value.querySelectorAll(".ql-reveal").forEach((el) => obs.observe(el));
+  }
+});
 </script>
 
 <style scoped>
